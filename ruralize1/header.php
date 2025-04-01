@@ -8,7 +8,6 @@
 </head>
 <body>
     <header>
-        <h1><?= $tituloPagina ?></h1>
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
@@ -16,10 +15,10 @@
                 
                 <?php if (estaLogado()): ?>
                     <li><a href="carrinho.php">Carrinho</a></li>
+                    <li><a href="pedidos.php">Pedidos</a></li>
                     <li><a href="logout.php">Logout (<?= $_SESSION['usuario_nome'] ?>)</a></li>
                 <?php else: ?>
                     <li><a href="login.php">Login</a></li>
-                    <li><a href="registro.php">Registrar</a></li>
                 <?php endif; ?>
             </ul>
         </nav>

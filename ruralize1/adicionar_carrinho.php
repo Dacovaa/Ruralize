@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $quantidade = intval($_POST['quantidade']);
 
     try {
-        $stmt = $pdo->prepare("SELECT * FROM produtos WHERE id = ?");
+        $stmt = $pdo->prepare("SELECT * FROM a01_produto WHERE A01_id = ?");
         $stmt->execute([$produtoId]);
         $produto = $stmt->fetch();
 
@@ -23,10 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
                 $_SESSION['carrinho'][$produtoId] = [
                     'id' => $produtoId,
-                    'nome' => $produto['nome'],
-                    'preco' => $produto['preco'],
+                    'nome' => $produto['A01_nome'],
+                    'preco' => $produto['A01_preco'],
                     'quantidade' => $quantidade,
-                    'imagem' => $produto['imagem']
+                    'imagem' => $produto['A01_imagem_url']
                 ];
             }
 

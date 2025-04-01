@@ -25,4 +25,8 @@ try {
 function estaLogado() {
     return isset($_SESSION['usuario_id']);
 }
+function getPdo() {
+    global $pdo; // Usa a variável global $pdo já criada
+    return $pdo;
+}
 ?>

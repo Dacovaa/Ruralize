@@ -1,4 +1,5 @@
 <?php
+
 $tituloPagina = "Carrinho de Compras";
 require_once 'config.php';
 
@@ -56,7 +57,7 @@ include 'header.php';
                 ?>
                     <div class="item-carrinho">
                         <div class="item-imagem">
-                            <img src="images/<?= htmlspecialchars($item['imagem']) ?>" 
+                            <img src="img/<?= htmlspecialchars($item['imagem']) ?>" 
                                  alt="<?= htmlspecialchars($item['nome']) ?>">
                         </div>
                         
