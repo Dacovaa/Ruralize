@@ -1,0 +1,90 @@
+@import url(styles.css);
+
+main {
+    padding: 0 !important;
+    width: auto !important;
+    height: 100vh !important;
+    margin: 0 !important;
+    background: #adaa89;
+background: linear-gradient(126deg,rgba(173, 170, 137, 1) 0%, rgba(35, 38, 31, 1) 55%);
+}
+h2 {
+    margin-bottom: 0 !important;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    padding-top: 1.5rem
+}
+.imageLogin{
+    background-size: cover;
+    width: 100%;
+    height: 80vh;
+    object-fit:contain;
+}
+.divImagem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer, header{
+    display: none;
+}
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 2rem 0 1rem 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: #2c3e50;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+.mainLogin{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+}
+.formulario{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: center;
+}
+.styleFormulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #B9B499;
+    border-radius: 8px;
+    gap: 2.5rem;
+}

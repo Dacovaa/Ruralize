@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-<?php
-$tituloPagina = "Checkout";
-require_once 'config.php';
-
-if (!estaLogado() || empty($_SESSION['carrinho'])) {
-    header("Location: index.php");
-    exit;
-}
-
-// Lógica de finalização de compra
-unset($_SESSION['carrinho']);
-$_SESSION['mensagem'] = "Compra finalizada com sucesso!";
-
-include 'header.php';
-?>
-
-<h2>Obrigado por comprar conosco!</h2>
-<p>Seu pedido foi processado com sucesso.</p>
-<a href="produtos.php" class="botao">Continuar comprando</a>
-
-=======
 <?php
 $tituloPagina = "Finalizar Compra";
 require_once 'config.php';
@@ -125,5 +103,4 @@ include 'header.php';
     </form>
 </div>
 
->>>>>>> 94153a8f956e56540b905670b510c9ef2536f246
 <?php include 'footer.php'; ?>

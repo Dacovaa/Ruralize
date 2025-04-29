@@ -1,0 +1,43 @@
+@import url(styles.css);
+
+header {
+    background-color: var(--corFundoHeader);
+    text-align: center;
+    height: 12vh;
+}
+
+header h1 {
+    color: #000;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.logo{
+    width: 3.5rem;
+    height: 3.5rem;
+}
+.separacaoLayoutHeader{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 0.5rem 1rem;
+    align-items: center;
+}
+
+nav ul li a {
+    font-family: sans-serif;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #3498db;
+}
