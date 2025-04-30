@@ -45,7 +45,10 @@ include 'header.php';
             <input type="password" name="senha" placeholder="Senha" required>
             <button type="submit">Entrar</button>
         </form>
-        <p>Ainda não tem conta? <a href="registro.php">Registre-se</a></p>
+        <div class="linksBottom">
+            <p>Ainda não tem conta? <a class="botaoRegistrar" href="registro.php">Registre-se</a></p>
+            <p><a href="index.php">Continuar sem login</a></p>
+        </div>
         </div>
     </div>
 </div>

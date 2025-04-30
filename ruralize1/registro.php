@@ -1,3 +1,13 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= 'Cadastro' ?></title>
+    <link rel="stylesheet" href="styles/login.css?v=3">
+    <link rel="stylesheet" href="styles/registro.css?v=3">
+</head>
+
+
 <?php
 $tituloPagina = "Registro";
 require_once 'config.php';
@@ -27,26 +37,34 @@ include 'header.php';
 ?>
 
 
-<div style="display: flex; height: 100vh;">
-    <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
-    <img src="img/Login.png "style="max-width: 100%; height: auto;"> 
+<div class="mainLogin">
+    <div class=".divImagem" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+    <img class="imageLogin" src="img/trofeuRuralize.png "> 
     </div>
-    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-        <h2>Registro</h2>
-        <form method="POST" style="display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 400px;">
-<form method="POST">
-    <input type="text" name="nome" placeholder="Nome completo" required>
-    <input type="email" name="email" placeholder="E-mail" required>
-    <input type="password" name="senha" placeholder="Senha" required>
-    <input type="text" name="cep" id="cep" placeholder="CEP" required>
-    <input type="text" name="endereco" id="endereco" placeholder="Endereço" required>
-    <input type="text" name="bairro" id="bairro" placeholder="Bairro" required>
-    <input type="text" name="cidade" id="cidade" placeholder="Cidade" required>
-    <input type="text" name="estado" id="estado" placeholder="Estado" required>
-    <button type="submit">Registrar</button>
-</form>
-<p style="margin-top: 10px; text-align: center;">Já tem conta? <a href="login.php">Faça login</a></p>
-
+    <div class="formulario">
+        <div class="styleFormulario">
+            <h2>Registro</h2>
+            <form method="POST">
+    <form method="POST">
+        <div class="etapa1" id="etapa1">
+            <input id="nome" type="text" name="nome" placeholder="Nome completo" required>
+            <input id="email" type="email" name="email" placeholder="E-mail" required>
+            <input id="senha" type="password" name="senha" placeholder="Senha" required>
+            <button type="button" onclick="proximaEtapa()">Avançar</button>
+        </div>
+        <div class="etapa2" id="etapa2">
+            <input type="text" name="cep" id="cep" placeholder="CEP" required>
+            <input type="text" name="endereco" id="endereco" placeholder="Endereço" required>
+            <input type="text" name="bairro" id="bairro" placeholder="Bairro" required>
+            <input type="text" name="cidade" id="cidade" placeholder="Cidade" required>
+            <input type="text" name="estado" id="estado" placeholder="Estado" required>
+            <button type="submit">Registrar</button>
+            <p class="voltarEtapa" onclick="etapaAnterior()">Voltar</p>
+        </div>
+    </form>
+    <p>Já tem conta? <a class="" href="login.php">Faça login</a></p>
+        </div>
+    </div>
 <script>
 document.getElementById('cep').addEventListener('blur', function() {
     var cep = this.value.replace(/\D/g, '');
@@ -66,6 +84,25 @@ document.getElementById('cep').addEventListener('blur', function() {
         .catch(error => console.error('Erro ao buscar CEP:', error));
     }
 });
+
+function proximaEtapa(){
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
+
+    if (nome === "" || email === "" || senha === "") {
+    alert("Por favor, preencha todos os campos");
+    return false;
+  }
+
+    document.getElementById('etapa1').style.display = 'none';
+    document.getElementById('etapa2').style.display = 'block';
+}
+
+function etapaAnterior(){
+    document.getElementById('etapa1').style.display = 'block';
+    document.getElementById('etapa2').style.display = 'none';
+}
 </script>
 
 <?php include 'footer.php'; ?>

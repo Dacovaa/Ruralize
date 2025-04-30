@@ -1,0 +1,19 @@
+.etapa2{
+    display: none;
+}
+.etapa1{
+    display: block;
+}
+.styleFormulario{
+    gap: 0 !important;
+}
+form{
+    padding: 0 2rem !important;
+}
+.formulario p{
+    text-align: center;
+    padding: 1rem 0 1rem;
+}
+.voltarEtapa{
+    cursor: pointer;
+}
