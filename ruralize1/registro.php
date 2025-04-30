@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['erro'] = "Erro ao registrar: " . $e->getMessage();
     }
 }
-
+#ok
 include 'header.php';
 ?>
 
