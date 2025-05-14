@@ -1,18 +1,51 @@
 <?php
 $tituloPagina = "Nossos Produtos";
 require_once 'config.php';
+$categoriaId = isset($_GET['categoria']) ? $_GET['categoria'] : null;
 
-// Busca os produtos no banco de dados
+// Busca os produtos no banco de dados e verifica se tem id de categoria para filtrar
 try {
-    $stmt = $pdo->query("SELECT * FROM A01_produto");
+    if (isset($_GET['categoria']) && is_numeric($_GET['categoria'])) {
+        $categoriaId = $_GET['categoria'];
+        $stmt = $pdo->prepare("SELECT * FROM A01_produto WHERE A02_categoria_A02_id = ?");
+        $stmt->execute([$categoriaId]);
+    } else {
+        $stmt = $pdo->query("SELECT * FROM A01_produto");
+    }
+    
     $produtos = $stmt->fetchAll();
 } catch (PDOException $e) {
     $_SESSION['erro'] = "Erro ao carregar produtos: " . $e->getMessage();
 }
 
+try {
+    $stmt = $pdo->query("SELECT * FROM a02_categoria LIMIT 5");
+    $categorias = $stmt->fetchAll();
+} catch (PDOException $e) {
+    $_SESSION['erro'] = "Erro ao carregar categorias: " . $e->getMessage();
+}
+
 include 'header.php';
 ?>
+<link rel="stylesheet" href="styles/nav.css">
+<img class="banner" src="img/Banner Ruralize.png" alt="">
 
+<section class="categorias-produtos">
+    <div class="categoria-container">
+        <?php if (isset($categorias) && count($categorias) > 0): ?>
+            <?php foreach ($categorias as $categoria): ?>
+            <!-- faz com que enviemos o id da categoria para a url, assim filtrando no produtos.php -->
+                <a class="categoria-link" href="produtos.php?categoria=<?= urlencode($categoria['A02_id']) ?>">
+                    <?= htmlspecialchars($categoria['A02_nome']) ?>
+                </a>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <div class="sem-produtos">
+                Nenhuma categoria no momento.
+            </div>
+        <?php endif; ?>
+    </div>
+</section>
 <div class="produto-lista">
     <?php if (isset($produtos) && count($produtos) > 0): ?>
         <?php foreach ($produtos as $produto): ?>

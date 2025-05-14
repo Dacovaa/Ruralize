@@ -7,25 +7,27 @@
 </head>
 <body>
     <header>
+       <!--  <li><p>olá (<?= $_SESSION['usuario_nome'] ?>)</p></li> -->
         <nav>
             <ul>
                 <img class="logo" src="img/logoRuralizeok.png " alt="">
+                <div class="separaLogo">
                 <div class="separacaoLayoutHeader">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="index.php">Página inicial</a></li>
                     <li><a href="produtos.php">Produtos</a></li>
-                    <li><a href="#">teste</a></li>
+                    <li><a href="#">Sobre nós</a></li>
                 </div>
                 
                 <?php if (estaLogado()): ?>
                     <div class="separacaoLayoutHeader">
-                        <li><a href="carrinho.php">Carrinho</a></li>
-                        <li><a href="pedidos.php">Pedidos</a></li>
-                        <li><a href="logout.php">Logout (<?= $_SESSION['usuario_nome'] ?>)</a></li>
+                        <li><a href="carrinho.php" title="Acessar Carrinho"><img src="img/carrinho.png" alt="entrar no carrinho de compras"></a></li>
+                        <li><a href="pedidos.php" title="Meu perfil"><img src="img/profile.png" alt=""></a></li>
+                        <li><a href="logout.php" title="Sair"><img src="img/logout.png" alt="sair da sua conta"></a></li>
                     </div>
-                    <li><a href="#"><img src="img/Shopping bag.ong" alt=""></a></li>
                 <?php else: ?>
                     <li><a href="login.php">Login</a></li>
                 <?php endif; ?>
+                </div>
             </ul>
         </nav>
     </header>

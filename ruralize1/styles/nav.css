@@ -1,0 +1,22 @@
+@import url(styles.css);
+
+.categorias-produtos{
+    background-color: var(--corFundoHeader);
+    height: 3rem;
+}
+.categoria-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    height: 100%;
+
+    font-family: sans-serif;
+    font-weight: 600;
+    color: white;
+
+}
+.categoria-container a:hover{
+    color: #14AE5C;
+}

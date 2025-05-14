@@ -32,7 +32,6 @@ if (!$pedido) {
 try {
     $pdo = getPdo();
     
-    // Consulta corrigida
     $stmt = $pdo->prepare("SELECT p.A01_nome, i.A05_quantidade, i.A05_precoUnitario, i.A05_subTotal
                           FROM a05_item_pedido i
                           JOIN a01_produto p ON i.A01_Produto_A01_id = p.A01_id
@@ -40,7 +39,6 @@ try {
     $stmt->execute([$pedidoId]);
     $itens = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
-    // ... (restante do código)
 } catch (PDOException $e) {
     die("Erro ao buscar itens do pedido: " . $e->getMessage());
 }

@@ -1,6 +1,6 @@
 @import url(reset.css);
 
-:root{ --corFundoHeader: #1E211D}
+:root{ --corFundoHeader: #232325}
 :root{ --corFundoLogin: #23261F}
 
 /* Reset básico */
@@ -22,15 +22,17 @@
     background-color: #e74c3c;
     color: #fff;
     padding: 1rem;
-    margin: 1rem;
     border-radius: 5px;
     text-align: center;
+        position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
 }
 
 /* Conteúdo principal */
 main {
-    padding: 3rem;
-    width: 100vh;
+    
     height: auto;
     margin: 0 auto;
 }
@@ -40,9 +42,80 @@ h2 {
     color: #2c3e50;
 }
 
-/* Estilos para produtos */
-.produtos-container {
+.banner{
+    width: 100%;
+}
+/* ----------------------------------------------------- */
+.conteudo{
+    padding: 0 3rem;
+}
+.conteudo h2, main h2{
+    text-align: center;
+}
+.produto-imagem img {
+    width: 100%;
+    height: 200px; 
+    object-fit: contain; 
+    border-radius: 8px; 
+}
+.produto-lista {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.produto-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 20rem;
+}
+
+.produto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.produto-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.produto-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+
+}
+
+.produto-info .descricao {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+      white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.produto-info .preco {
+    font-size: 1.2rem;
+    color: #27ae60;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* ----------------------------------------------------- */
+
+/* Estilos para produtos */
+.produtos-container, .produto-lista {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
@@ -284,6 +357,7 @@ h2 {
 .form-adicionar {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
 }
 
@@ -298,8 +372,8 @@ h2 {
 /* Estilos para os botões do carrinho */
 .botoes-carrinho {
     display: flex;
-    gap: 1rem; /* Espaçamento entre os botões */
-    justify-content: flex-end; /* Alinha os botões à direita */
+    gap: 1rem; 
+    justify-content: flex-end;
     margin-top: 1rem;
 }
 
@@ -336,62 +410,7 @@ h2 {
 .botao-atualizar:hover {
     background-color: #e67e22;
 }
-.produto-imagem img {
-    width: 100%;
-    height: 200px; 
-    object-fit: cover; 
-    border-radius: 8px; 
-}
-.produto-lista {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-}
 
-.produto-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.produto-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.produto-imagem img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.produto-info {
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.produto-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
-}
-
-.produto-info .descricao {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 1rem;
-}
-
-.produto-info .preco {
-    font-size: 1.2rem;
-    color: #27ae60;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
 
 /* Toast para mensagens */
 .toast {

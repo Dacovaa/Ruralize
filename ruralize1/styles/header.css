@@ -2,8 +2,11 @@
 
 header {
     background-color: var(--corFundoHeader);
-    text-align: center;
-    height: 12vh;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
 }
 
 header h1 {
@@ -19,14 +22,23 @@ header h1 {
 .separacaoLayoutHeader{
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
+}
+.separacaoLayoutHeader>li>a>img{
+    width: 25px;
+}
+.separaLogo{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    justify-content: space-between;
 }
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 0.5rem 1rem;
     align-items: center;
 }
@@ -40,4 +52,5 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #3498db;
+    
 }

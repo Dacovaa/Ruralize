@@ -2,17 +2,44 @@
 $tituloPagina = "Ruralize";
 require_once 'config.php';
 
-// Busca os produtos no banco de dados
+// Busca os produtos
 try {
-    $stmt = $pdo->query("SELECT * FROM a01_produto LIMIT 3");
+    $stmt = $pdo->query("SELECT * FROM a01_produto LIMIT 4");
     $produtos = $stmt->fetchAll();
 } catch (PDOException $e) {
     $_SESSION['erro'] = "Erro ao carregar produtos: " . $e->getMessage();
 }
 
+// Busca as categorias
+
+try {
+    $stmt = $pdo->query("SELECT * FROM a02_categoria LIMIT 5");
+    $categorias = $stmt->fetchAll();
+} catch (PDOException $e) {
+    $_SESSION['erro'] = "Erro ao carregar categorias: " . $e->getMessage();
+}
+
 include 'header.php';
 ?>
-
+<link rel="stylesheet" href="styles/nav.css">
+<img class="banner" src="img/Banner Ruralize.png" alt="">
+<section class="categorias-produtos">
+    <div class="categoria-container">
+        <?php if (isset($categorias) && count($categorias) > 0): ?>
+            <?php foreach ($categorias as $categoria): ?>
+            <!-- faz com que enviemos o id da categoria para a url, assim filtrando no produtos.php -->
+                <a class="categoria-link" href="produtos.php?categoria=<?= urlencode($categoria['A02_id']) ?>">
+                    <?= htmlspecialchars($categoria['A02_nome']) ?>
+                </a>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <div class="sem-produtos">
+                Nenhuma categoria no momento.
+            </div>
+        <?php endif; ?>
+    </div>
+</section>
+<section class="conteudo">
 <h2>Produtos em Destaque</h2>
 <div class="produtos-container">
     <?php if (isset($produtos) && count($produtos) > 0): ?>
@@ -57,6 +84,7 @@ include 'header.php';
         </div>
     <?php endif; ?>
 </div>
+</section class="conteudo">
 <br>
 <br>
 <h2>

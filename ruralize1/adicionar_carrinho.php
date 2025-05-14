@@ -42,8 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $response['message'] = "Método de requisição inválido.";
 }
 
-// Certifique-se de que o cabeçalho está definido corretamente
 header('Content-Type: application/json');
 echo json_encode($response);
-exit; // Adicione exit para garantir que o script pare aqui
+exit;
 ?>
