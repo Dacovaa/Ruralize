@@ -116,13 +116,28 @@ function adicionarAoCarrinho(event, produtoId) {
         }
     })
     .catch(error => {
-        mostrarToast('Adicionado ao carrinho.');
+            mostrarToast(`
+        Adicionado ao carrinho. 
+        <a href="carrinho.php" style="
+            display: inline-block;
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: #ffffff33;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        ">
+            Ver Carrinho
+        </a>
+    `);
     });
 }
 
 function mostrarToast(mensagem, tipo = 'sucesso') {
     const toast = document.getElementById('toast');
     toast.textContent = mensagem;
+    toast.innerHTML = mensagem;
     toast.className = `toast ${tipo}`;
     toast.style.display = 'block';
 

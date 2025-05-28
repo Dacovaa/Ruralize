@@ -10,7 +10,7 @@
        <!--  <li><p>olá (<?= $_SESSION['usuario_nome'] ?>)</p></li> -->
         <nav>
             <ul>
-                <img class="logo" src="img/logoRuralizeok.png " alt="">
+                <a href="index.php"><img class="logo" src="img/logoRuralizeok.png " alt=""></a>
                 <div class="separaLogo">
                 <div class="separacaoLayoutHeader">
                 </div>

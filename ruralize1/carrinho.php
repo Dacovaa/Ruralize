@@ -42,12 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 include 'header.php';
 ?>
-
+<link rel="stylesheet" href="styles/carrinho.css">
+<a href="index.php" class="botao-voltar">←</a>
 <div class="carrinho-container">
     <h2>Seu Carrinho</h2>
     
     <?php if (!empty($_SESSION['carrinho'])): ?>
-        <form action="carrinho.php" method="POST">
+        <form class="carrinho-conteudo" action="carrinho.php" method="POST">
             <div class="itens-carrinho">
                 <?php 
                 $total = 0;
