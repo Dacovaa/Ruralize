@@ -78,16 +78,7 @@ include 'header.php';
     <?php endif; ?>
 </div>
 </section class="conteudo">
-<br>
-<br>
-<h2>
-  <a href="produtos.php" 
-     class="destaque-link" 
-     style="text-decoration: none; color:rgb(14, 79, 139);"
-     onmouseover="this.style.color='#2c3e50'" >
-    Conheça Todos os Nossos Produtos
-  </a>
-</h2>
+
 <!-- Toast para mensagens -->
 <div id="toast" class="toast"></div>
 

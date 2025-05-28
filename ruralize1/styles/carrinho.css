@@ -100,7 +100,7 @@ main{
 
 .resumo-carrinho {
     position: fixed;
-    bottom: 20px;
+    bottom: 10vh;
     right: 20px;
     z-index: 1000;
     max-width: 40%;
