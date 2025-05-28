@@ -223,7 +223,25 @@ h2 {
 
 
 /* Rodapé */
-
+.card-confianca{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #096731;
+    color: whitesmoke;
+    font-size: 16px;
+    font-weight: 600;
+}
+.card-confianca p{
+    font-weight: 400;
+}
+.confianca-frete, .confianca-pagamento, .confianca-qualidade{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 30%;
+}
 
 /* Responsividade */
 @media (max-width: 768px) {
@@ -294,25 +312,7 @@ h2 {
     background-color: #e67e22;
 }
 
-.card-confianca{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    background-color: #096731;
-    color: whitesmoke;
-    font-size: 16px;
-    font-weight: 600;
-}
-.card-confianca p{
-    font-weight: 400;
-}
-.confianca-frete, .confianca-pagamento, .confianca-qualidade{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    width: 30%;
-}
+
 
 
 /* Toast para mensagens */

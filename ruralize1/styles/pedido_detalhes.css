@@ -1,0 +1,60 @@
+.pedido-detalhes-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.pedido-detalhes-container h2 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.pedido-info p,
+.endereco-entrega p,
+.itens-pedido li {
+    margin-bottom: 0.5rem;
+}
+
+.endereco-entrega h3,
+.itens-pedido h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.itens-pedido ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.itens-pedido li {
+    padding: 0.5rem;
+    background-color: #f7f7f7;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+.subtotal {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.botao.voltar {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.2rem;
+    background-color: #219653;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.botao.voltar:hover {
+    background-color: #45d383;
+}

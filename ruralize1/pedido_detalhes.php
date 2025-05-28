@@ -44,25 +44,40 @@ try {
 }
 include 'header.php';
 ?>
-
+<link rel="stylesheet" href="styles/pedido_detalhes.css">
 <div class="pedido-detalhes-container">
-    <h2>Detalhes do Pedido #<?= htmlspecialchars($pedido['A04_id']) ?></h2>
-    <p><strong>Status:</strong> <?= htmlspecialchars($pedido['A04_status']) ?></p>
-    <p><strong>Data do Pedido:</strong> <?= date('d/m/Y H:i', strtotime($pedido['A04_dataPedido'])) ?></p>
-    <p><strong>Total:</strong> R$ <?= number_format($pedido['A04_total'], 2, ',', '.') ?></p>
-    
-    <h3>Itens do Pedido</h3>
-    <ul>
-        <?php foreach ($itens as $item): ?>
-            <li>
-                <?= htmlspecialchars($item['A01_nome']) ?> - 
-                <?= $item['A05_quantidade'] ?> x R$ <?= number_format($item['A05_precoUnitario'], 2, ',', '.') ?> 
-                (Subtotal: R$ <?= number_format($item['A05_subTotal'], 2, ',', '.') ?>)
-            </li>
-        <?php endforeach; ?>
-    </ul>
-    
-    <a href="pedidos.php" class="botao">Voltar para Meus Pedidos</a>
+    <h2>Pedido #<?= htmlspecialchars($pedido['A04_id']) ?></h2>
+
+    <div class="pedido-info">
+        <p><strong>Status:</strong> <?= htmlspecialchars($pedido['A04_status']) ?></p>
+        <p><strong>Data do Pedido:</strong> <?= date('d/m/Y H:i', strtotime($pedido['A04_dataPedido'])) ?></p>
+        <p><strong>Total:</strong> R$ <?= number_format($pedido['A04_total'], 2, ',', '.') ?></p>
+    </div>
+
+    <div class="endereco-entrega">
+        <h3>Endereço de Entrega</h3>
+        <p>
+            <?= htmlspecialchars($pedido['A04_endereco']) ?>, 
+            Nº <?= htmlspecialchars($pedido['A04_numero']) ?> <br>
+            <?= htmlspecialchars($pedido['A04_bairro']) ?> - 
+            <?= htmlspecialchars($pedido['A04_cidade']) ?>/<?= htmlspecialchars($pedido['A04_estado']) ?> <br>
+            CEP: <?= htmlspecialchars($pedido['A04_cep']) ?>
+        </p>
+    </div>
+
+    <div class="itens-pedido">
+        <h3>Itens do Pedido</h3>
+        <ul>
+            <?php foreach ($itens as $item): ?>
+                <li>
+                    <?= htmlspecialchars($item['A01_nome']) ?> -
+                    <?= $item['A05_quantidade'] ?> x R$ <?= number_format($item['A05_precoUnitario'], 2, ',', '.') ?>
+                    <br><span class="subtotal">(Subtotal: R$ <?= number_format($item['A05_subTotal'], 2, ',', '.') ?>)</span>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
+    <a href="pedidos.php" class="botao voltar">← Voltar para Meus Pedidos</a>
 </div>
 
-<?php include 'footer.php'; ?>

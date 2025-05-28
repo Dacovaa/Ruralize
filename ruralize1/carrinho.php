@@ -88,14 +88,14 @@ include 'header.php';
             </div>
 
             <div class="resumo-carrinho">
-    <h3>Total do Pedido</h3>
-    <p class="total">R$ <?= number_format($total, 2, ',', '.') ?></p>
-    
-    <div class="botoes-carrinho">
-        <button type="submit" name="atualizar" class="botao-atualizar">Atualizar Carrinho</button>
-        <a href="checkout.php" class="botao-checkout">Finalizar Compra</a>
-    </div>
-</div>
+                <h3>Total do Pedido</h3>
+                <p class="total">R$ <?= number_format($total, 2, ',', '.') ?></p>
+                
+                <div class="botoes-carrinho">
+                    <button type="submit" name="atualizar" class="botao-atualizar">Atualizar Carrinho</button>
+                    <a href="checkout.php" class="botao-checkout">Finalizar Compra</a>
+                </div>
+            </div>
         </form>
     <?php else: ?>
         <div class="carrinho-vazio">
