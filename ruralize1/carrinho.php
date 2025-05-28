@@ -105,5 +105,3 @@ include 'header.php';
         </div>
     <?php endif; ?>
 </div>
-
-<?php include 'footer.php'; ?>

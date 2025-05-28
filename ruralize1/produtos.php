@@ -28,7 +28,7 @@ try {
 include 'header.php';
 ?>
 <link rel="stylesheet" href="styles/nav.css">
-<img class="banner" src="img/Banner Ruralize.png" alt="">
+<img class="banner" src="img/Banner Ruralize.svg" alt="">
 
 <a href="index.php" class="botao-voltar">←</a>
 

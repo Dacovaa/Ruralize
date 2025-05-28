@@ -146,5 +146,3 @@ function mostrarToast(mensagem, tipo = 'sucesso') {
     }, 3000);
 }
 </script>
-
-<?php include 'footer.php'; ?>
