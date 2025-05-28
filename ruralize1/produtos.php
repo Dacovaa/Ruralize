@@ -30,6 +30,8 @@ include 'header.php';
 <link rel="stylesheet" href="styles/nav.css">
 <img class="banner" src="img/Banner Ruralize.png" alt="">
 
+<a href="index.php" class="botao-voltar">←</a>
+
 <section class="categorias-produtos">
     <div class="categoria-container">
         <?php if (isset($categorias) && count($categorias) > 0): ?>
@@ -63,14 +65,7 @@ include 'header.php';
                     </p>
                     
                     <?php if (estaLogado()): ?>
-                        <form class="form-adicionar" onsubmit="adicionarAoCarrinho(event, <?= $produto['A01_id'] ?>)">
-                            <label for="quantidade-<?= $produto['A01_id'] ?>">Quantidade:</label>
-                            <input type="number" id="quantidade-<?= $produto['A01_id'] ?>" 
-                                   name="quantidade" value="1" min="1" class="quantidade-input">
-                            <button type="submit" class="botao-add">
-                                <i class="fas fa-cart-plus"></i> Adicionar
-                            </button>
-                        </form>
+                        <a href="comprar.php?id=<?= $produto['A01_id'] ?>" class="btn-comprar">Comprar</a>
                     <?php else: ?>
                         <div class="login-alerta">
                             <a href="login.php">Faça login</a> para comprar

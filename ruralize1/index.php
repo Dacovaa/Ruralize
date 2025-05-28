@@ -62,17 +62,10 @@ include 'header.php';
                     </p>
                     
                     <?php if (estaLogado()): ?>
-                        <form class="form-adicionar" onsubmit="adicionarAoCarrinho(event, <?= $produto['A01_id'] ?>)">
-                            <label for="quantidade-<?= $produto['A01_id'] ?>">Quantidade:</label>
-                            <input type="number" id="quantidade-<?= $produto['A01_id'] ?>" 
-                                   name="quantidade" value="1" min="1" class="quantidade-input">
-                            <button type="submit" class="botao-add">
-                                <i class="fas fa-cart-plus"></i> Adicionar
-                            </button>
-                        </form> 
+                        <a href="comprar.php?id=<?= $produto['A01_id'] ?>" class="btn-comprar">Comprar</a>
                     <?php else: ?>
                         <div class="login-alerta">
-                            <a href="login.php">Faça login</a> para comprar
+                            <a href="login.php">Faça login para comprar</a>
                         </div>
                     <?php endif; ?>
                 </div>

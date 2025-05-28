@@ -1,0 +1,113 @@
+main{
+    display: flex !important;
+    flex-direction: column ;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: whitesmoke;
+}
+.container-interesse{
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    width: 80%;
+    justify-content: baseline !important;
+}
+.interesse{
+    font-size: 16px;
+    font-weight: 500;
+}
+.comprar-interesse{
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #219653;
+}
+.comprar-titulo{
+    font-weight: 700;
+    font-size: 32px;
+}
+.comprar-paragrafo{
+    font-size: 20px;
+    width: 80%;
+}
+.comprar-preco{
+    font-size: 32px;
+    font-weight: 200;
+}
+.comprar-off{
+    font-size: 16px;
+    color: #219653;
+    font-weight: 200;
+}
+.section-comprar{
+    height: 80vh !important;
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 !important;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    border-radius: 4px 4px 0 0;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.56);
+}
+.comprar-imagem{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.comprar-imagem img{
+    width: 80%;
+}
+.comprar-descricao{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 1rem;
+}
+.comprar-infos{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.form-adicionar{
+    flex-direction: column !important;
+    gap: 1rem !important;
+    align-items: baseline !important;
+}
+.btn-adicionar{
+    background-color: #219653;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    color: white;
+    border: 0;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.mensagem {
+    position:fixed;
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.erro {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+        position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+}

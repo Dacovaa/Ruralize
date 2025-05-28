@@ -13,9 +13,6 @@
                 <img class="logo" src="img/logoRuralizeok.png " alt="">
                 <div class="separaLogo">
                 <div class="separacaoLayoutHeader">
-                    <li><a href="index.php">Página inicial</a></li>
-                    <li><a href="produtos.php">Produtos</a></li>
-                    <li><a href="#">Sobre nós</a></li>
                 </div>
                 
                 <?php if (estaLogado()): ?>

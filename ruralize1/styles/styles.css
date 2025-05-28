@@ -46,6 +46,23 @@ h2 {
     width: 100%;
 }
 /* ----------------------------------------------------- */
+.botao-voltar {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    background-color: #fff;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: background-color 0.2s ease;
+}
+
+.botao-voltar:hover {
+    background-color: #f0f0f0;
+}
 .conteudo{
     padding: 0 3rem;
 }
@@ -90,6 +107,9 @@ h2 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     color: #2c3e50;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
 }
 
@@ -107,6 +127,16 @@ h2 {
     color: #27ae60;
     font-weight: bold;
     margin-bottom: 1rem;
+}
+.login-alerta{
+    background-color: #219653;
+    color: white;
+    font-weight: 400;
+    border-radius: 16px;
+    padding: 0.5rem;
+}
+.login-alerta>a{
+    padding: 0.5rem;
 }
 
 /* ----------------------------------------------------- */
@@ -159,6 +189,13 @@ h2 {
     color: #27ae60;
     font-weight: bold;
     margin-bottom: 1rem;
+}
+
+.btn-comprar{
+    background-color: #219653;
+    padding: 0.5rem;
+    border-radius: 8px;
+    color: white;
 }
 
 .botao {
