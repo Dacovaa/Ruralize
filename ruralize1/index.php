@@ -22,7 +22,7 @@ try {
 include 'header.php';
 ?>
 <link rel="stylesheet" href="styles/nav.css">
-<img class="banner" src="img/Banner Ruralize.svg" alt="">
+<img class="banner" src="img/banner.svg" alt="">
 <section class="categorias-produtos">
     <div class="categoria-container">
         <?php if (isset($categorias) && count($categorias) > 0): ?>

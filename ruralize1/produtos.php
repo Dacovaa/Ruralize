@@ -7,10 +7,10 @@ $categoriaId = isset($_GET['categoria']) ? $_GET['categoria'] : null;
 try {
     if (isset($_GET['categoria']) && is_numeric($_GET['categoria'])) {
         $categoriaId = $_GET['categoria'];
-        $stmt = $pdo->prepare("SELECT * FROM A01_produto WHERE A02_categoria_A02_id = ?");
+        $stmt = $pdo->prepare("SELECT * FROM a01_produto WHERE A02_categoria_A02_id = ?");
         $stmt->execute([$categoriaId]);
     } else {
-        $stmt = $pdo->query("SELECT * FROM A01_produto");
+        $stmt = $pdo->query("SELECT * FROM a01_produto");
     }
     
     $produtos = $stmt->fetchAll();

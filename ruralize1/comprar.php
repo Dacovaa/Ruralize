@@ -7,7 +7,7 @@ include 'header.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     try {
-        $stmt = $pdo->prepare("SELECT * FROM A01_produto WHERE A01_id = ?");
+        $stmt = $pdo->prepare("SELECT * FROM a01_produto WHERE A01_id = ?");
         $stmt->execute([$id]);
         $produto = $stmt->fetch();
 

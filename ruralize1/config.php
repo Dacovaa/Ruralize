@@ -1,7 +1,26 @@
 <?php
 session_start();
 
-// Configuração do banco de dados
+function carregarEnv($caminho) {
+    if (!file_exists($caminho)) return;
+
+    $linhas = file($caminho, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($linhas as $linha) {
+        if (str_starts_with($linha, '#') || !str_contains($linha, '=')) continue;
+        list($chave, $valor) = explode('=', $linha, 2);
+        $_ENV[trim($chave)] = trim($valor);
+    }
+}
+
+carregarEnv(__DIR__ . '/.env');
+
+// Configuração do banco de dados com .env
+// $host = $_ENV['DB_HOST'];
+// $db   = $_ENV['DB_NAME'];
+// $user = $_ENV['DB_USER'];
+// $pass = $_ENV['DB_PASS'];
+// $charset = $_ENV['DB_CHARSET'];
+
 $host = 'localhost';
 $db   = 'ruralize1';
 $user = 'root';
